@@ -1,0 +1,18 @@
+		input:focus, select:focus {
+			color: #222;
+			border-bottom: 2px solid #7A4A3E;
+		}
+		input[type=submit]{
+			background: #b07863;
+			 float: right;
+		}
+		input[type=button] {
+			background: #b07863;
+			float: left;
+		}
+		body {
+			background-image: url("../images/calendar4.jpg");
+		}
+		.submit:hover {
+			background: #8a6051;
+		}
