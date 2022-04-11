@@ -7,7 +7,7 @@
 		$relation=$_POST['relation'];
 		$p_id=$_POST['p_id'];
 		$date=$_POST['date'];
-		$insertquery="INSERT INTO visitor(visitor_name, phone_nb, email, kinship, visit_date, prisoner_id) VALUES ('$v_name','$phone_number','$email','$relation','$date','$p_id')";
+		$insertquery="INSERT INTO visitor(visitor_name, phone_nb, email, kinship, visit_date, prisoner_id, request_status) VALUES ('$v_name','$phone_number','$email','$relation','$date','$p_id', 'pending')";
 		$result1=mysqli_query($con, $insertquery);
 		$getallpidquery = "SELECT prisoner_id FROM prisoner";
 		$result2=mysqli_query($con, $getallpidquery);
