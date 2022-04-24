@@ -18,7 +18,9 @@
 		elseif(mysqli_num_rows($result)!==0){
 			session_start();
 			$_SESSION['isloggedin']=1;
+			$_SESSION['id']=$row['admin_id'];
 			$_SESSION['username']=$row['admin_name'];
+			$_SESSION['block']=$row['block'];
 			header("location:../admin/index.php");
 		}
 		else{

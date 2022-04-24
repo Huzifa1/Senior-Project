@@ -63,9 +63,9 @@
 				  ?>
             </ul>
           </li>
-          <li><a href="services.html">See Cameras</a></li>
-          <li><a href="portfolio.html">Manage Data</a></li>
-          <li><a href="pricing.html">Log out</a></li>
+          <li><a href="../camera/index.php">See Cameras</a></li>
+          <li><a href="../manage data (manager)/index.php">Manage Data</a></li>
+          <li><a href="../logout/logout.php">Log out</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

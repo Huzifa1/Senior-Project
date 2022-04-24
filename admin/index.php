@@ -16,7 +16,7 @@
 
 body {
   /* The image used */
-  background-image: url("assets/img/main.jpg");
+  background-image: url("assets/img/office.jpg");
 
   /* Full height */
   height: 100%;
@@ -27,6 +27,15 @@ body {
   background-size: cover;
 }
   
+  	.float-container {
+    padding: 20px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+} 
   </style>
 	
 	
@@ -46,7 +55,6 @@ body {
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   
 </head>
 
@@ -55,19 +63,17 @@ body {
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
-		<?php
-			require_once "code1.php";
-		?>
+		<?php require_once "code1.php"; ?>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.php" class="active">Home</a></li>
-		  <li><a href="services.html">Write a Report</a></li>
-          <li><a href="services.html">See Cameras</a></li>
-          <li><a href="portfolio.html">Manage Data</a></li>
-          <li><a href="pricing.html">Log out</a></li>
+		  <li><a href="../report/index.php">Write a Report</a></li>
+          <li><a href="../camera/index.php">See Cameras</a></li>
+          <li><a href="../manage data (admin)/index.php">Manage Data</a></li>
+          <li><a href="../logout/logout.php">Log out</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -79,13 +85,19 @@ body {
   </br></br></br></br>
   
   <div class="m-4">
-    <div class="accordion" id="myAccordion" style="width:45%">
-	
-        <?php
-			require_once "code2.php";
-		?>
-        
-        
+    <div class="accordion" id="myAccordion" style="width:100%">
+		<div class="float-container">
+			<div class="float-child">
+				<?php
+					require_once "code2.php";
+				?>
+			</div>
+			<div class="float-child">
+				<?php
+					require_once "code3.php";
+				?>
+			</div>
+        </div>
     </div>
 </div>
 

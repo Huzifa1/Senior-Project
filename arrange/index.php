@@ -51,9 +51,7 @@
 					<h3>What is the id of the prisoner you are visiting?</h3>
                     <div class="form-group-1">
 						<input type="text" name="p_id" id="name" placeholder="Prisoner id" required />
-						<?php
-							require_once "code.php";
-						?>
+						<?php require_once "code.php"; ?>
 					</div>
 					
 					<h3>Select a date for the visit</h3>
