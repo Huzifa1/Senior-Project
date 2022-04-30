@@ -27,7 +27,7 @@
                 <div class="form-group-1">
                     <input type="text" name="name" id="name" placeholder="Your Name" required />
                     <input type="email" name="email" id="email" placeholder="Email" required />
-                    <input type="number" name="phone_number" id="phone_number" placeholder="Phone number" onblur="checkphone()" required  />
+                    <input type="number" name="phone_number" id="phone_number" placeholder="Phone number" onkeyup="checkphone()" required  />
 					<label id="error"></label>
                 </div>
                 <div class="form-group-2">

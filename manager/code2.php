@@ -7,7 +7,7 @@
 	$myquery = "SELECT block FROM block";
 	$result=mysqli_query($con, $myquery);
 	while($row = mysqli_fetch_assoc($result)){
-			echo '<li><a href="index.php?block='.$row['block'].'A&date='.$date.'">'.$row['block'].'</a></li>';
+			echo '<li><a href="index.php?block='.$row['block'].'&date='.$date.'">'.$row['block'].'</a></li>';
 	}
 					
  ?>

@@ -5,11 +5,11 @@
 		$username=stripcslashes($username);
 		$username=mysqli_real_escape_string($con, $username); //Strip the username
 		$password=md5($_POST['password']); //Encrypt the password
-		$encrypted_admin = md5('admin');	//Encrypt admin
+		$encrypted_admin = md5('manager');	//Encrypt admin
 		$myquery="SELECT * FROM admin where username='$username' AND password='$password'";
 		$result=mysqli_query($con, $myquery);
 		$row = mysqli_fetch_assoc($result);
-		if($username=='admin' and $password==$encrypted_admin ){ 
+		if($username=='manager' and $password==$encrypted_admin ){ 
 			session_start();
 			$_SESSION['isloggedin']=1;
 			$_SESSION['username']=$username;
