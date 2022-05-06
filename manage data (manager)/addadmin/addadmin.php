@@ -43,7 +43,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="addadmin.php" class="active">Home</a></li>
+          <li><a href="../../manager/index.php" class="active">Home</a></li>
 		  <li><a href="../index.php">Main Page</a></li>
 		  <li><a href="../search/search.php">Search</a></li>
           <li><a href="../../camera/index.php">See Cameras</a></li>

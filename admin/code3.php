@@ -23,6 +23,7 @@
 					<div class="card-body">
 						<p><span style="font-weight:bold">Prisoner Id: </span>'.$id.'</p>
 						<p><span style="font-weight:bold">Request: </span>'.$row['type'].'</p>
+						<p><span style="font-weight:bold">Date: </span>'.$row['date'].'</p>
 
 						<button type="button" class="btn btn-outline-success" onclick="'.$string1 .'">Accept</button>
 						<button type="button" class="btn btn-outline-danger" onclick="'.$string2 .'">Reject</button>

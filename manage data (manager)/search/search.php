@@ -12,29 +12,87 @@
 	
      <!-- From -->
 		
-     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="../myassets/style.css" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 
 
      
 
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+    
+    <style> 
+        body, html {
+          height: 100%;
+        }
+
+        .bg {
+          /* The image used */
+          background-image: url("../assets/img/office3.jpg");
+
+          /* Full height */
+          height: 100%;
+
+          /* Center and scale the image nicely */
+          background-position: top;
+          background-repeat: repeat-y;
+          background-size: cover;
+        }
+		
+		.p-t-165 {
+		  padding-top: 100px;
+		}
+
+		@media (max-width: 767px) {
+		  .p-t-165 {
+			padding-top: 80px;
+		  }
+		}
+
+		.p-b-100 {
+		  padding-bottom: 80px;
+		}
+
+		@media (max-width: 767px) {
+		  .p-b-100 {
+			padding-bottom: 200px;
+		  }
+		}
+		
+		.page-wrapper {
+		  min-height: 100vh;
+		}
+		
+		.tab-list__link {
+		  display: block;
+		  text-transform: uppercase;
+		  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+		  font-weight: 500;
+		  font-size: 19px;
+		  color: rgba(85, 85, 85, 0.6);
+		  padding: 0 20px;
+		}
+    </style>
 </head>
 
-<body>
+<body class="bg">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -46,9 +104,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="addadmin.php" class="active">Home</a></li>
-		  <li><a href="../addadmin/addadmin.php">Add Admin</a></li>
-		  <li><a href="../search/search.php">Search</a></li>
+          <li><a href="../../manager/index.php" class="active">Home</a></li>
+		  <li><a href="../index.php">Main Page</a></li>
+		   <li><a href="../addadmin/addadmin.php">Add Admin</a></li>
           <li><a href="../../camera/index.php">See Cameras</a></li>
           <li><a href="../../logout/logout.php">Log out</a></li>
         </ul>
@@ -57,173 +115,441 @@
 
     </div>
   </header><!-- End Header -->
-  <button onclick="myFunction()">Try it</button>
   <!-- ======= Hero Section ======= -->
-  <section id="hero">
-
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
-      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-
-        <div class="carousel-item active" style="background-image: url(../assets/img/office3.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-				
-            <!-- Form -->
-            </br>
-            <div class="container-fluid px-1 py-5 mx-auto">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                    <select class="form-select" id="mySelect" name="search" aria-label="Default select example" style="height:45px;" onchange="myFunction()">
-                      <option value="allDiv">Select an Option</option>
-                      <option value="adminDiv">Search Admin</option>
-                      <option value="staffDiv">Search Staff</option>
-                      <option value="prisonerDiv">Search Prisoner</option>
-                    </select>
-
-                    <!-- Admin From -->
-                        <div id="adminDiv" class="card" style="display: none;">
-                            <h5 class="text-center mb-4">Search Admin</h5>
-                            <p style="color:black">Check the checkbox to select the required field in the searching criteria </p>
-                            <form method="post" action="code1.php" class="form-card" onsubmit="return Validate()">
-                                <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Full Name <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="name" name="name" aria-label="Default select example" style="height:45px;">
-                                      <?php require_once "admin_name_query.php"; ?>
-                                    </select>
+  <div class="page-wrapper p-t-165 p-b-100" >
+        <div class="wrapper wrapper--w680">
+            <div class="card card-2">
+                <div class="card-body">
+                    <ul class="tab-list">
+                        <li class="tab-list__item active">
+                            <a class="tab-list__link" href="#tab1" data-toggle="tab">Admin</a>
+                        </li>
+                        <li class="tab-list__item">
+                            <a class="tab-list__link" href="#tab2" data-toggle="tab">Staff</a>
+                        </li>
+                        <li class="tab-list__item">
+                            <a class="tab-list__link" href="#tab3" data-toggle="tab">Prisoner</a>
+                        </li>
+						<li class="tab-list__item">
+                            <a class="tab-list__link" href="#tab4" data-toggle="tab">Visitor</a>
+                        </li>
+						<li class="tab-list__item">
+                            <a class="tab-list__link" href="#tab5" data-toggle="tab">Request</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <form method="POST" action="../table/tableAdmin.php">
+                              
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Full Name:</label> <label class="checkbox-container" style="color:white">.<input type="checkbox" name="adminNameBox" id="adminNameBox" onclick="enableAdminName()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="adminNameValue" id="adminNameValue" disabled>
+                                                    <?php require_once "admin_name_query.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Admin Id <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="id" name="id" aria-label="Default select example" style="height:45px;">
-                                      <?php require_once "admin_id_query.php"; ?>
-                                    </select>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Id:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="adminIdBox" id="adminIdBox" onclick="enableAdminId()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="adminIdValue" id="adminIdValue" disabled>
+                                                    <?php require_once "admin_id_query.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                             
-                                <div class="row justify-content-between text-left">
-                                  <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Salary <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> <input type="text" id="from" name="from" placeholder="From" onblur="validate(1)" > </div>
-                                  <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"></label></br> <input type="text" id="to" name="to" onblur="validate(1)" placeholder="To"> </div>
-                                  </div>
-
-                                <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Block <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="block" name="block" aria-label="Default select example" style="height:45px;">
-                                      <?php require_once "block_query.php"; ?>
-                                    </select>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Salary:</label><label class="checkbox-container" style="color:white">. <input type="checkbox" name="adminSalaryBox" id="adminSalaryBox" onclick="enableAdminSalary()">
+											<span class="checkmark"></span></label>
+                                            <input class="input--style-1" id="adminSalaryFromValue" type="number" name="adminSalaryFromValue" placeholder="From" disabled>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-sm-6 flex-column d-flex"></br> <button type="submit" class="btn-block btn-primary">Submit</button> </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label" style="color:white">.</label>
+                                            <input class="input--style-1" type="number" id="adminSalaryToValue" name="adminSalaryToValue" placeholder="To" disabled>
+                                        </div>
+                                    </div>
                                 </div>
-
-
+                                <div>
+                                        <div class="input-group">
+                                            <label class="label">Block</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="adminBlockBox" id="adminBlockBox" onclick="enableAdminBlock()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="adminBlockValue" id="adminBlockValue" disabled>
+                                                    <?php require_once "block_query.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                <div class="row row-space">
+									<div class="col-2">
+										<button class="btn-submit m-t-0" type="button" onclick="window.location.replace('../table/tableAdmin.php');">Show all Admins</button>
+									</div>
+									<div class="col-2">
+										<button class="btn-submit m-t-0" type="submit">search</button>
+									</div>
+								</div>
                             </form>
                         </div>
+                        <div class="tab-pane" id="tab2">
+                            <form method="POST" action="../table/tableStaff.php">
 
-                        <!-- Staff From -->
-
-                        <div id="staffDiv" class="card" style="display: none;">
-                            <h5 class="text-center mb-4">Search Staff</h5>
-                            <p style="color:black">Check the checkbox to select the required field in the searching criteria </p>
-                            <form method="post" action="code1.php" class="form-card" onsubmit="return Validate()">
-                                <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Full Name <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="name" name="name" aria-label="Default select example" style="height:45px;">
-                                      <?php require_once "staff_name_query.php"; ?>
-                                    </select>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Name:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="staffNameBox" id="staffNameBox" onclick="enableStaffName()">
+											<span class="checkmark"></span></label>
+											<input class="input--style-1" id="staffNameValue" type="text" name="staffNameValue" placeholder="" disabled>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Staff Id <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="id" name="id" aria-label="Default select example" style="height:45px;">
-                                      <?php require_once "staff_id_query.php"; ?>
-                                    </select>
-                                    </div>
-                                </div>
-
-                                <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Shift <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="shift" name="shift" aria-label="Default select example" style="height:45px;">
-                                        <option value="day">Day</option>
-                                        <option value="night">Night</option>
-                                    </select>
-                                    </div>
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Job <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="job" name="job" aria-label="Default select example" style="height:45px;">
-                                      <option value="nurse">Nurse</option>
-                                      <option value="doctor">Doctor</option>
-                                      <option value="guard">Guard</option>
-                                      <option value="IT">IT</option>
-                                      <option value="officer">Officer</option>
-
-                                    </select>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Id:</label><label class="checkbox-container" style="color:white">. <input type="checkbox" name="staffIdBox" id="staffIdBox" onclick="enableStaffId()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="staffIdValue" id="staffIdValue" disabled>
+                                                    <?php require_once "staff_id_query.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                             
-                                <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Salary <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> <input type="text" id="from" name="from" placeholder="From" onblur="validate(1)" > </div>
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"></label></br> <input type="text" id="to" name="to" onblur="validate(1)" placeholder="To"> </div> 
-                                </div>
-
-                                <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Block <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="block" name="block" aria-label="Default select example" style="height:45px;">
-                                      <?php require_once "block_query2.php"; ?>
-                                    </select>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Shift:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="staffShiftBox" id="staffShiftBox" onclick="enableStaffShift()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="staffShiftValue" id="staffShiftValue" disabled>
+                                                    <option value="day">Day</option>
+													<option value="night">Night</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-sm-6 flex-column d-flex"></br> <button type="submit" class="btn-block btn-primary">Submit</button> </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Job:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="staffJobBox" id="staffJobBox" onclick="enableStaffJob()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="staffJobValue" id="staffJobValue" disabled>
+                                                    <option value="nurse">Nurse</option>
+													<option value="doctor">Doctor</option>
+													<option value="guard">Guard</option>
+													<option value="IT">IT</option>
+													<option value="officer">Officer</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-                            
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Salary:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="staffSalaryBox" id="staffSalaryBox" onclick="enableStaffSalary()">
+											<span class="checkmark"></span></label>
+                                            <input class="input--style-1" id="staffSalaryFromValue" type="number" name="staffSalaryFromValue" placeholder="From" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label" style="color:white">.</label>
+                                            <input class="input--style-1" type="number" id="staffSalaryToValue" name="staffSalaryToValue" placeholder="To" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                        <div class="input-group">
+                                            <label class="label">Block</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="staffBlockBox" id="staffBlockBox" onclick="enableStaffBlock()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="staffBlockValue" id="staffBlockValue" disabled>
+                                                    <?php require_once "block_query2.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+									
+									<div class="row row-space">
+										<div class="col-2">
+											<button class="btn-submit m-t-0" type="button" onclick="window.location.replace('../table/tableStaff.php');">Show all Staff</button>
+										</div>
+										<div class="col-2">
+											<button class="btn-submit m-t-0" type="submit">search</button>
+										</div>
+									</div>
+                                
+								
                             </form>
                         </div>
-
-                        <!-- Prisoner From -->
-
-                        <div id="prisonerDiv" class="card" style="display: none;">
-                            <h5 class="text-center mb-4">Search Admin</h5>
-                            <p style="color:black">Check the checkbox to select the required field in the searching criteria </p>
-                            <form method="post" action="code1.php" class="form-card" onsubmit="return Validate()">
-                                <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Full Name <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="name" name="name" aria-label="Default select example" style="height:45px;">
-                                      <?php require_once "admin_name_query.php"; ?>
-                                    </select>
+                        <div class="tab-pane" id="tab3">
+                            <form method="POST" action="../table/tablePrisoner.php">
+                              
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Name:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="prisonerNameBox" id="prisonerNameBox" onclick="enablePrisonerName()">
+											<span class="checkmark"></span></label>
+											<input class="input--style-1" id="prisonerNameValue" type="text" name="prisonerNameValue" placeholder="" disabled>    
+                                        </div>
                                     </div>
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Admin Id <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="id" name="id" aria-label="Default select example" style="height:45px;">
-                                      <?php require_once "admin_id_query.php"; ?>
-                                    </select>
-                                    </div>
-                                </div>
-                             
-                                <div class="row justify-content-between text-left">
-                                  <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">From Salary</label> <input type="text" id="from" name="from" onblur="validate(1)" > </div>
-                                  <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">To Salary <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> <input type="text" id="to" name="to" onblur="validate(1)"> </div>
-                                  </div>
-
-                                <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3" style="margin:0px 5px 5px 0px">Block <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin:4px 0px 0px 20px"></label> 
-                                    <select class="form-select" id="block" name="block" aria-label="Default select example" style="height:45px;">
-                                      <?php require_once "block_query.php"; ?>
-                                    </select>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Id:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="prisonerIdBox" id="prisonerIdBox" onclick="enablePrisonerId()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="prisonerIdValue" id="prisonerIdValue" disabled>
+                                                    <?php require_once "prisoner_id_query.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="row justify-content-between text-left">
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label id="errorMessage" class="form-control-label px-3" ></label></div>
-                                    <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Submit</button> </div>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Crime:</label><label class="checkbox-container" style="color:white">. <input type="checkbox" name="prisonerCrimeBox" id="prisonerCrimeBox" onclick="enablePrisonerCrime()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="prisonerCrimeValue" id="prisonerCrimeValue" disabled>
+                                                    <option value="thief">Thief</option>
+													<option value="bribary">Bribary</option>
+													<option value="murder">Murder</option>
+													<option value="kill">Kill</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Cell Nb:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="prisonerCellBox" id="prisonerCellBox" onclick="enablePrisonerCell()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="prisonerCellValue" id="prisonerCellValue" disabled>
+                                                     <?php require_once "cell_query.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Duration:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="prisonerDurationBox" id="prisonerDurationBox" onclick="enablePrisonerDuration()">
+											<span class="checkmark"></span></label>
+                                            <input class="input--style-1" id="prisonerDurationFromValue" type="number" name="prisonerDurationFromValue" placeholder="From" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label" style="color:white">.</label>
+                                            <input class="input--style-1" type="number" id="prisonerDurationToValue" name="prisonerDurationToValue" placeholder="To" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="row row-space">
+									<div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Block</label><label class="checkbox-container" style="color:white">.  <input type="checkbox" name="prisonerBlockBox" id="prisonerBlockBox" onclick="enablePrisonerBlock()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="prisonerBlockValue" id="prisonerBlockValue" disabled>
+                                                    <?php require_once "block_query3.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+									</div>
+									<div class="col-2">
+										<div class="input-group">
+											<label class="label">Age:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="prisonerAgeBox" id="prisonerAgeBox" onclick="enablePrisonerAge()">
+											<span class="checkmark"></span></label>
+											<input class="input--style-1" id="prisonerAgeValue" type="number" name="prisonerAgeValue" placeholder="" disabled>
+										</div>
+									</div>
+								</div>
+                                <div class="row row-space">
+									<div class="col-2">
+										<button class="btn-submit m-t-0" type="button" onclick="window.location.replace('../table/tablePrisoner.php');">Show all Prisoners</button>
+									</div>
+									<div class="col-2">
+										<button class="btn-submit m-t-0" type="submit">search</button>
+									</div>
+								</div>
                             </form>
                         </div>
+						
+						<div class="tab-pane" id="tab4">
+                            <form method="POST" action="../table/tableVisitor.php">
+                              
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Name:</label> <label class="checkbox-container" style="color:white">.<input type="checkbox" name="visitorNameBox" id="visitorNameBox" onclick="enableVisitorName()">
+											<span class="checkmark"></span></label>
+                                            <input class="input--style-1" id="visitorNameValue" type="text" name="visitorNameValue" placeholder="" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Id:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="visitorIdBox" id="visitorIdBox" onclick="enableVisitorId()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="visitorIdValue" id="visitorIdValue" disabled>
+                                                    <?php require_once "visitor_id_query.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Email:</label><label class="checkbox-container" style="color:white">. <input type="checkbox" name="visitorEmailBox" id="visitorEmailBox" onclick="enableVisitorEmail()">
+											<span class="checkmark"></span></label>
+                                            <input class="input--style-1" id="visitorEmailValue" type="email" name="visitorEmailValue" placeholder="" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                           <label class="label">Phone Number:</label><label class="checkbox-container" style="color:white">. <input type="checkbox" name="visitorNumberBox" id="visitorNumberBox" onclick="enableVisitorNumber()">
+											<span class="checkmark"></span></label>
+                                            <input class="input--style-1" type="number" id="visitorNumberValue" name="visitorNumberValue" placeholder="To" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+							    <div class="row row-space">
+									<div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Priosnr Id:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="visitorPrisonerBox" id="visitorPrisonerBox" onclick="enableVisitorPrisoner()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="visitorPrisonerValue" id="visitorPrisonerValue" disabled>
+                                                    <?php require_once "prisoner_id_query2.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+									</div>
+									<div class="col-2">
+                                        <div class="input-group">
+                                           <label class="label">Date:</label><label class="checkbox-container" style="color:white">. <input type="checkbox" name="visitorDateBox" id="visitorDateBox" onclick="enableVisitorDate()">
+											<span class="checkmark"></span></label>
+                                            <input class="input--style-1" type="date" id="visitorDateValue" name="visitorDateValue" placeholder="" disabled>
+                                        </div>
+                                    </div>
+								</div>
+                                
+                                <div class="row row-space">
+									<div class="col-2">
+										<button class="btn-submit m-t-0" type="button" onclick="window.location.replace('../table/tableVisitor.php');">Show all Visitors</button>
+									</div>
+									<div class="col-2">
+										<button class="btn-submit m-t-0" type="submit">search</button>
+									</div>
+								</div>
+                            </form>
+                        </div>
+						
+						
+						
+							<div class="tab-pane" id="tab5">
+                            <form method="POST" action="../table/tableRequest.php">
 
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Prisoner Id:</label><label class="checkbox-container" style="color:white">. <input type="checkbox" name="requestIdBox" id="requestIdBox" onclick="enableRequestId()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="requestIdValue" id="requestIdValue" disabled>
+                                                    <?php require_once "prisoner_id_query3.php"; ?>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Request Type:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="requestTypeBox" id="requestTypeBox" onclick="enableRequestType()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="requestTypeValue" id="requestTypeValue" disabled>
+                                                    <option value="food">Food</option>
+													<option value="clothes">Clothes</option>
+													<option value="clothes">Clothes</option>
+													<option value="shower">Shower</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-space">
 
-			<!-- End From -->
-
-			</div>
-          </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Status:</label><label class="checkbox-container" style="color:white">.<input type="checkbox" name="requestStatusBox" id="requestStatusBox" onclick="enableRequestStatus()">
+											<span class="checkmark"></span></label>
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="requestStatusValue" id="requestStatusValue" disabled>
+                                                    <option value="accepted">Accepted</option>
+													<option value="rejected">Rejected</option>
+													<option value="pending">Pending</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="col-2">
+                                        <div class="input-group">
+                                           <label class="label">Date:</label><label class="checkbox-container" style="color:white">. <input type="checkbox" name="requestDateBox" id="requestDateBox" onclick="enableRequestDate()">
+											<span class="checkmark"></span></label>
+                                            <input class="input--style-1" type="date" id="requestDateValue" name="requestDateValue" placeholder="" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+									
+									<div class="row row-space">
+										<div class="col-2">
+											<button class="btn-submit m-t-0" type="button" onclick="window.location.replace('../table/tableRequest.php');">Show all Requests</button>
+										</div>
+										<div class="col-2">
+											<button class="btn-submit m-t-0" type="submit">search</button>
+										</div>
+									</div>
+                                
+								
+                            </form>
+                        </div>
+					
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-	
-  </section>
-  
-  <!-- End Hero -->
 
 <!-- Form -->
 
@@ -231,68 +557,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../myassets/script.js"></script>
-    <script>  
-        function Validate() {
-        var password = document.getElementById("pwd1").value;
-        var confirmPassword = document.getElementById("pwd2").value;
-        if (password != confirmPassword) {
-            var message = document.getElementById("errorMessage");
-            message.style.color = 'red';
-            message.innerHTML = "Passwords don't match";
-            return false;
-        }
-        else{
-            document.getElementById("errorMessage").innerHTML = "";
-            return true;
-        }
-       }
-       
-      //  function submit(){
-      //   if(Validate() == true){
-      //     return true;
-      //   }
-      //   else{
-      //     alert("Passwords don't match");
-      //     return false;
-      //   }
-      //  }
-      
-</script>  
+   
 
-<!-- Show and Hide div -->
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/jquery-validate/jquery.validate.min.js"></script>
+    <script src="vendor/bootstrap-wizard/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
 
-<script>
-  function myFunction() {
-    var x = document.getElementById("mySelect").value;
-    var admin = document.getElementById("adminDiv");
-    var staff = document.getElementById("staffDiv");
-    var prisoner = document.getElementById("prisonerDiv");
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+	
+	<!-- Disabled inputs-->
+	<script src="js/enable.js"></script>
 
-    if(x == "adminDiv"){
-        admin.style.display = "block";
-        staff.style.display = "none";
-        prisoner.style.display = "none";
-
-    }
-    else if(x == "staffDiv"){
-        staff.style.display = "block";
-        admin.style.display = "none";
-        prisoner.style.display = "none";
-    }
-
-    else if(x == "prisonerDiv"){
-        prisoner.style.display = "block";
-        admin.style.display = "none";
-        staff.style.display = "none";
-    }
-    else{
-        prisoner.style.display = "none";
-        admin.style.display = "none";
-        staff.style.display = "none";
-
-    } 
-  }
-</script>
 </body>
 
 </html>
