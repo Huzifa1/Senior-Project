@@ -11,6 +11,6 @@
 	$nbofrows = mysqli_fetch_assoc($nbofrowsresult);
 	$count += $nbofrows['count(*)'];
 	if($count != 0){
-	echo '<span style="color:red;" class="badge badge-light">' .$count.'</span>'; 
+	echo '<span style="color:red;background-color:white" class="badge badge-light">' .$count.'</span>'; 
 	}
 ?>

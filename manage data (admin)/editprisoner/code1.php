@@ -8,6 +8,7 @@
         $fullname = $fname . ' ' . $lname;
         $insertquery="UPDATE prisoner SET priosner_name='$fullname',age='$age',crime='$crime',duration='$duration',cell_nb='$cell',block='$block' WHERE prisoner_id = '$id'";
         $result=mysqli_query($con, $insertquery);
+		require_once "updateCell.php";
         header("location:../index.php");
     }
    

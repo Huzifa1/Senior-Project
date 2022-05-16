@@ -119,7 +119,7 @@
                             <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="Edit" onclick="window.location.replace(\'../editprisoner/editprisoner.php?id='.$row['prisoner_id'].'\');">
                                 <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" class="btn btn-primary btn-just-icon btn-sm" data-original-title="" title="See Location" onclick="window.location.replace(\'edit.php?longitude='.$row['longitude'].'&latitude='.$row['latitude'].'\');">
+                            <button type="button" rel="tooltip" class="btn btn-primary btn-just-icon btn-sm" data-original-title="" title="See Location" onclick="window.location.replace(\'../location/index.php?id='.$row['prisoner_id'].'\');">
                                 <i class="material-icons">map</i>
                             </button>
                         </td>

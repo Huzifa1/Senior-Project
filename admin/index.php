@@ -36,9 +36,12 @@ body {
     float: left;
     padding: 20px;
 } 
+th, td {
+  padding: 0px 20px 15px 0px;
+}
   </style>
 	
-	
+
 
 
   <!-- Google Fonts -->
@@ -55,6 +58,8 @@ body {
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
+
   
 </head>
 
@@ -100,6 +105,8 @@ body {
         </div>
     </div>
 </div>
+
+
 
  
 

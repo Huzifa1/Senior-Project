@@ -10,23 +10,62 @@
 		echo'<h1 class="display-6 animate__animated animate__fadeInDown" >Prisoner\'s Requests ('.$nbofrows['count(*)'].'):</h1>';
 		while($row = mysqli_fetch_assoc($result)){
 			$id = $row['prisoner_id'];
+			$string1 = "window.location.replace('update.php?prisoner_id=".$id."&type=".$row['type']."&status=accepted');";
+			$string2 = "window.location.replace('update.php?prisoner_id=".$id."&type=".$row['type']."&status=rejected');";
+			echo '<div id="modalCenterA'.$i.'" class="modal fade" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Confirmation</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+							</div>
+							<div class="modal-body">
+								<p>Are you sure, you want to accept?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary" onclick="'.$string1.'">Yes</button>
+							</div>
+						</div>
+					</div>
+				</div>';
+				
+			echo '<div id="modalCenterB'.$i.'" class="modal fade" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Confirmation</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+							</div>
+							<div class="modal-body">
+								<p>Are you sure, you want to reject?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary" onclick="'.$string2.'">Yes</button>
+							</div>
+						</div>
+					</div>
+				</div>';
+				
+			
 			$query2="SELECT  priosner_name FROM prisoner WHERE prisoner_id = $id";
 			$result2=mysqli_query($con, $query2);
 			$row2 = mysqli_fetch_assoc($result2);
-			$string1 = "if(confirm('Are you sure?')){ window.location.replace('index.php?prisoner_id=".$id."&type=".$row['type']."&status=accepted') };";
-			$string2 = "if(confirm('Are you sure?')){ window.location.replace('index.php?prisoner_id=".$id."&type=".$row['type']."&status=rejected') };";
+			
 			echo ' <div class="accordion-item">
 				<h2 class="accordion-header" id="heading"'.$i.'>
 					<button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse'.$i.'">From: '.$row2['priosner_name'].'</button>									
 				</h2>
 				<div id="collapse'.$i.'" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
 					<div class="card-body">
-						<p><span style="font-weight:bold">Prisoner Id: </span>'.$id.'</p>
-						<p><span style="font-weight:bold">Request: </span>'.$row['type'].'</p>
-						<p><span style="font-weight:bold">Date: </span>'.$row['date'].'</p>
-
-						<button type="button" class="btn btn-outline-success" onclick="'.$string1 .'">Accept</button>
-						<button type="button" class="btn btn-outline-danger" onclick="'.$string2 .'">Reject</button>
+						<table>
+							<tr><th> Prisoner Id: </th><td><a href="../manage data (admin)/table/tablePrisoner.php?fromId='.$id.'">'.$id.'</a></td></tr>
+							<tr><th> Request: </th><td>'.$row['type'].'</td></tr>
+							<tr><th> Date: </th><td>'.$row['date'].'</td></tr>
+						</table>
+						<a href="#modalCenterA'.$i.'" role="button" class="btn btn-outline-success" data-bs-toggle="modal">Accept</a>
+						<a href="#modalCenterB'.$i.'" role="button" class="btn btn-outline-danger" data-bs-toggle="modal">Reject</a>
 				   </div>
 				</div>
 			
@@ -38,7 +77,6 @@
 	else{
 		echo ' <h1 class="display-6 animate__animated animate__fadeInDown">There are no requests from prisoners</h1>';
 	}
-	
 	
 	
 	

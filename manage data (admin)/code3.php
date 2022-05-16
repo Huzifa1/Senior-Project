@@ -83,14 +83,9 @@
 	$row = mysqli_fetch_assoc($result);
 	$nbOfStaffD = $row['count(*)'];
 	
-	$query="SELECT SUM(admin_salary) FROM admin";
+	$query="SELECT count(*) FROM request";
 	$result=mysqli_query($con, $query);
 	$row = mysqli_fetch_assoc($result);
-	$sumOfSalariesAdmin = $row['SUM(admin_salary)'];
+	$nbOfRequests = $row['count(*)'];
 	
-	$query="SELECT SUM(staff_salary) FROM staff";
-	$result=mysqli_query($con, $query);
-	$row = mysqli_fetch_assoc($result);
-	$sumOfSalariesStaff = $row['SUM(staff_salary)'];
-	$totalSalaries = $sumOfSalariesAdmin + $sumOfSalariesStaff;
 ?>

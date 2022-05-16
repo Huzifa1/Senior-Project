@@ -8,6 +8,7 @@
         $fullname = $fname . ' ' . $lname;
         $insertquery="INSERT INTO prisoner(priosner_name, age, crime, duration, cell_nb, block, admin_id) VALUES ('$fullname','$age','$crime','$duration','$cell','$block','$id')";
         $result=mysqli_query($con, $insertquery);
+		require_once "updateCell.php";
         header("location:whichblock.php");
     }
    

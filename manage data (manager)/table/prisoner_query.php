@@ -102,11 +102,28 @@
 
 		$result=mysqli_query($con, $selectquery);
 		$rowcount=mysqli_num_rows($result);
-		
+		$i = 0;
 		if($rowcount != 0){
 			while($row = mysqli_fetch_assoc($result)){
-
-				echo'
+				$string = "window.location.replace('delete_prisoner.php?id=".$row["prisoner_id"]."')";
+				echo '<div id="modalCenterA'.$i.'" class="modal fade" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Confirmation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure, you want to delete?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="'.$string.'">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+                echo'
 				    <tr>
                         <td class="text-center">'.$row['prisoner_id'].'</td>
                         <td>'.$row['priosner_name'].'</td>
@@ -119,15 +136,13 @@
                             <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="Edit" onclick="window.location.replace(\'../editprisoner/editprisoner.php?id='.$row['prisoner_id'].'\');">
                                 <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" class="btn btn-primary btn-just-icon btn-sm" data-original-title="" title="See Location" onclick="window.location.replace(\'edit.php?longitude='.$row['longitude'].'&latitude='.$row['latitude'].'\');">
+                            <button type="button" rel="tooltip" class="btn btn-primary btn-just-icon btn-sm" data-original-title="" title="See Location" onclick="window.location.replace(\'../location/index.php?id='.$row['prisoner_id'].'\');">
                                 <i class="material-icons">map</i>
                             </button>
-                            <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="Delete" onclick="window.location.replace(\'edit.php?id='.$row['prisoner_id'].'\');">
-                            <i class="material-icons">close</i>
-                            </button>
+                            <a href="#modalCenterA'.$i.'" role="button" class="btn btn-danger btn-just-icon btn-sm" data-bs-toggle="modal"> <i class="material-icons">close</i></a>
                         </td>
                     </tr>';
-
+                $i++;
 
 
 			}

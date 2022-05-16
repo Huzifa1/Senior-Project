@@ -14,10 +14,15 @@
 			
 		}
 		if($ifExist){
-        echo '<option value="'.$row1['block'].'" disabled>'.$row1['block'].' (Already Exist)</option>';
+			
+			?>
+			<option <?php if(isset($block)){ if($block==$row1['block']){echo 'selected="selected"';}}?> value="<?php echo $row1['block']; ?>" disabled><?php echo $row1['block']; ?> (Already Exist)</option>		
+		<?php
 		}
 		else{
-			echo '<option value="'.$row1['block'].'">'.$row1['block'].'</option>';
+			?>
+			<option <?php if(isset($block)){ if($block==$row1['block']){echo 'selected="selected"';}}?> value="<?php echo $row1['block']; ?>"><?php echo $row1['block']; ?></option>
+			<?php
 		}
     }   
 	}

@@ -1,6 +1,5 @@
-
-
 <!DOCTYPE html>
+<?php require_once "../isLoggedin.php"; ?>
 <html lang="en">
 <head>
   <meta charset="utf-8">

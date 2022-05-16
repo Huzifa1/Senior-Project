@@ -26,7 +26,7 @@
 		
 
 		?>
-        <option  <?=$selectrow['block']==$row1['block']?'selected="selected"':'';?> value="<?php  echo $row1['block']; ?>"> <?php  echo $row1['block']; ?> </option>';
+        <option  <?php $selectrow['block']==$row1['block']?'selected="selected"':'';?> value="<?php  echo $row1['block']; ?>"> <?php  echo $row1['block']; ?> </option>';
 		<?php
 		}
     }   
